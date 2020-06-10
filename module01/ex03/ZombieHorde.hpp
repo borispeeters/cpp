@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/03/31 22:15:59 by bpeeters       #+#    #+#                */
-/*   Updated: 2020/03/31 22:46:54 by bpeeters      ########   odam.nl         */
+/*   Created: 2020/03/31 22:15:59 by bpeeters      #+#    #+#                 */
+/*   Updated: 2020/06/10 12:02:14 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 	ZombieHorde(int N);
 	~ZombieHorde();
 private:
-	std::string	randomName() const;
+	std::string	randomName();
 	Zombie	*m_zombies;
 };
 

@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/02 22:58:34 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/04/11 01:18:18 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/10 17:08:15 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int	main()
 	delete ft2;
 	ft.vaulthunter_dot_exe("Corona");
 	st.challengeNewcomer("Trump");
+	st.rangedAttack("Trump");
 	nt.ninjaShoebox(*nt2);
 	delete nt2;
 	nt.meleeAttack("Corona");

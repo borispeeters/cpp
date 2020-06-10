@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/11 01:26:58 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/04/17 07:57:02 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/10 17:17:18 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,11 @@ SuperTrap::SuperTrap(const std::string &name):
 	m_armorReduction = FragTrap::m_armorReduction;
 }
 
-SuperTrap::SuperTrap(const SuperTrap &st)
+SuperTrap::SuperTrap(const SuperTrap &st):
+	ClapTrap(st.m_name),
+	FragTrap(st.m_name),
+	NinjaTrap(st.m_name)
+
 {
 	std::cout << "SUPER COPY CONSTRUCTOR\n";
 	*this = st;

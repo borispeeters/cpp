@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/02 22:58:34 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/04/10 23:55:34 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/10 17:06:32 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main()
 	FragTrap	ft("Fraggie");
 	FragTrap	*ft2 = new FragTrap(ft);
 	ScavTrap	st("Scavvy");
+	ScavTrap	st2(st);
 
 	ft.takeDamage(4);
 	ft.rangedAttack("Corona");
@@ -37,5 +38,6 @@ int	main()
 	delete ft2;
 	ft.vaulthunter_dot_exe("Corona");
 	st.challengeNewcomer("Trump");
+	st2.rangedAttack("Trump");
 	return 0;
 }

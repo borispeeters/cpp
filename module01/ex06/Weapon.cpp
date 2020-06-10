@@ -5,15 +5,15 @@
 /*                                                     +:+                    */
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/03/31 23:50:21 by bpeeters       #+#    #+#                */
-/*   Updated: 2020/04/01 05:38:29 by bpeeters      ########   odam.nl         */
+/*   Created: 2020/03/31 23:50:21 by bpeeters      #+#    #+#                 */
+/*   Updated: 2020/06/10 16:09:58 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include "Weapon.hpp"
 
-Weapon::Weapon(const std::string &type = "fist") : m_type(type)
+Weapon::Weapon(const std::string &type) : m_type(type)
 {
 }
 

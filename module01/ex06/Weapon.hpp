@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/03/31 23:40:55 by bpeeters       #+#    #+#                */
-/*   Updated: 2020/04/01 05:38:36 by bpeeters      ########   odam.nl         */
+/*   Created: 2020/03/31 23:40:55 by bpeeters      #+#    #+#                 */
+/*   Updated: 2020/06/10 16:10:04 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Weapon
 {
 public:
-	Weapon(const std::string &type = "fist");
+	Weapon(const std::string &type);
 	const std::string&	getType() const;
 	void				setType(const std::string &type);
 private:

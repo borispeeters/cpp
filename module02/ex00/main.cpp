@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/04/01 05:51:17 by bpeeters       #+#    #+#                */
-/*   Updated: 2020/04/01 05:51:48 by bpeeters      ########   odam.nl         */
+/*   Created: 2020/04/01 05:51:17 by bpeeters      #+#    #+#                 */
+/*   Updated: 2020/06/10 16:26:51 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ int main( void )
 	Fixed a;
 	Fixed b( a );
 	Fixed c;
+
 	c = b;
+
 	std::cout << a.getRawBits() << std::endl;
 	std::cout << b.getRawBits() << std::endl;
 	std::cout << c.getRawBits() << std::endl;

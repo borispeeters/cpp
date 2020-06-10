@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/04/02 22:58:39 by bpeeters       #+#    #+#                */
-/*   Updated: 2020/04/03 05:16:56 by bpeeters      ########   odam.nl         */
+/*   Created: 2020/04/02 22:58:39 by bpeeters      #+#    #+#                 */
+/*   Updated: 2020/06/10 16:53:11 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,7 +154,7 @@ void		FragTrap::vaulthunter_dot_exe(std::string const & target)
 			m_energyPoints = 0;
 
 		const int	arrayLength = sizeof(attackFunctions) / sizeof(attackFunctions[0]);
-		static constexpr double fraction = 1.0 / (RAND_MAX + 1.0);
+		static const double fraction = 1.0 / (RAND_MAX + 1.0);
 		int	randomIndex = static_cast<int>(arrayLength * (std::rand() * fraction));
 		(this->*attackFunctions[randomIndex])(target);
 	}
