@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/17 08:08:35 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/04/17 08:26:28 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/12 12:58:47 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ Sorcerer::~Sorcerer()
 
 Sorcerer&	Sorcerer::operator=(const Sorcerer &sorc)
 {
+	if (&sorc == this)
+		return *this;
 	m_name = sorc.m_name;
 	m_title = sorc.m_title;
 	return *this;
@@ -49,8 +51,13 @@ std::string	Sorcerer::getTitle() const
 	return m_title;
 }
 
+void		Sorcerer::polymorph(Victim const & victim)
+{
+	victim.getPolymorphed();
+}
+
 std::ostream& operator<<(std::ostream &out, const Sorcerer &sorc)
 {
-    out << "I am " << sorc.getName() << ", " << sorc.getTitle << ", and I like ponies!\n";
+    out << "I am " << sorc.getName() << ", " << sorc.getTitle() << ", and I like ponies!\n";
     return out;
 }

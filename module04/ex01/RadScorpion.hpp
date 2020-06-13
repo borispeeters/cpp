@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Victim.hpp                                         :+:    :+:            */
+/*   RadScorpion.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/04/17 08:27:23 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/12 14:04:51 by bpeeters      ########   odam.nl         */
+/*   Created: 2020/06/13 18:31:47 by bpeeters      #+#    #+#                 */
+/*   Updated: 2020/06/13 18:32:51 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VICTIM_HPP
-# define VICTIM_HPP
+#ifndef RADSCORPION_HPP
+# define RADSCORPION_HPP
 
-# include <string>
+# include "Enemy.hpp"
 
-class Victim
+class RadScorpion : public Enemy
 {
 private:
-	Victim();
 public:
-	Victim(const std::string &name);
-	Victim(const Victim &victim);
-	virtual ~Victim();
-	Victim&		operator=(const Victim &victim);
-	std::string	getName() const;
-	std::ostream&	print(std::ostream &out) const;
-	virtual void 		getPolymorphed() const;
-protected:
-	std::string	m_name;
+    RadScorpion();
+    virtual ~RadScorpion();
 };
-
-std::ostream& operator<<(std::ostream &out, const Victim &victim);
 
 #endif

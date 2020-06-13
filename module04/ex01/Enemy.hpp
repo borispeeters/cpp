@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Sorcerer.hpp                                       :+:    :+:            */
+/*   Enemy.hpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/04/17 08:05:53 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/11 19:16:13 by bpeeters      ########   odam.nl         */
+/*   Created: 2020/06/13 18:12:32 by bpeeters      #+#    #+#                 */
+/*   Updated: 2020/06/13 18:17:50 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SORCERER_HPP
-# define SORCERER_HPP
+#ifndef ENEMY_HPP
+# define ENEMY_HPP
 
 # include <string>
-# include "Victim.hpp"
 
-class Sorcerer
+class Enemy
 {
 private:
-	Sorcerer();
+    Enemy();
 public:
-	Sorcerer(const std::string &name, const std::string &title);
-	Sorcerer(const Sorcerer &sorc);
-	~Sorcerer();
-	Sorcerer&	operator=(const Sorcerer &sorc);
-	std::string	getName() const;
-	std::string	getTitle() const;
-	void		polymorph(Victim const & victim);
+    Enemy(int hp, std::string const & type);
+    virtual ~Enemy();
+    Enemy(Enemy const & enemy);
+    Enemy&  operator=(const Enemy & enemy);
+    std::string const & getType() const;
+    int getHP() const;
+    virtual void    takeDamage(int damage);
 private:
-	std::string	m_name;
-	std::string	m_title;
+    std::string m_type;
+    int         m_hp;
 };
-
-std::ostream& operator<<(std::ostream &out, const Sorcerer &sorc);
 
 #endif

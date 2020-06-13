@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/17 08:27:29 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/04/17 08:38:14 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/13 12:13:06 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ Victim::Victim(const Victim &victim)
 	*this = victim;
 	std::cout << "Some random victim called " << m_name << " just appeared!\n";
 }
+
 Victim::~Victim()
 {
 	std::cout << "Victim " << m_name << " just died for no apparent reason!\n";
@@ -33,6 +34,8 @@ Victim::~Victim()
 
 Victim&	Victim::operator=(const Victim &victim)
 {
+	if (&victim == this)
+		return *this;
 	m_name = victim.m_name;
 	return *this;
 }
@@ -42,6 +45,12 @@ std::string	Victim::getName() const
 	return m_name;
 }
 
+std::ostream&	Victim::print(std::ostream &out) const
+{
+	out << "I'm " << m_name << " and I like otters!\n";
+	return out;
+}
+
 void 		Victim::getPolymorphed() const
 {
 	std::cout << m_name << " has been turned into a cute little sheep!\n";
@@ -49,6 +58,5 @@ void 		Victim::getPolymorphed() const
 
 std::ostream& operator<<(std::ostream &out, const Victim &victim)
 {
-	out << "I'm " << victim.getName() << " and I like otters!\n";
-    return out;
+    return victim.print(out);
 }
