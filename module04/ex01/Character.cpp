@@ -6,11 +6,12 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/13 18:42:21 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/15 11:36:02 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/15 18:12:38 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <stddef.h>
 #include "Character.hpp"
 #include "Enemy.hpp"
 
