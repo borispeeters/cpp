@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/13 18:37:40 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/13 19:01:42 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/15 11:24:08 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,17 @@ private:
 public:
     Character(std::string const & name);
     virtual ~Character();
-    Character&  operator=();
+    Character&  operator=(Character const & character);
     void    recoverAP();
     void    equip(AWeapon*);
     void    attack(Enemy*);
     std::string const & getName() const;
+	int					getAP() const;
+	AWeapon				*getWeapon() const;
 private:
-    std::string const & m_name;
-    int     m_ap;
-    AWeapon *m_aweapon;
+    std::string	m_name;
+    int			m_ap;
+    AWeapon		*m_aweapon;
 };
 
 std::ostream& operator<<(std::ostream &out, const Character &character);

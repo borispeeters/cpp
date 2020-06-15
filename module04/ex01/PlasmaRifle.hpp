@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/12 16:24:17 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/13 11:52:09 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/15 11:26:40 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	PlasmaRifle(PlasmaRifle const & plasmarifle);
 	virtual ~PlasmaRifle();
 	PlasmaRifle&	operator=(const PlasmaRifle & plasmarifle);
-	virtual void	attack();
+	virtual void	attack() const;
 };
 
 #endif

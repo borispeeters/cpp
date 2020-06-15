@@ -6,12 +6,11 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/13 10:40:45 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/13 16:29:31 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/15 11:27:14 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "AWeapon.hpp"
 #include "PlasmaRifle.hpp"
 
 PlasmaRifle::PlasmaRifle():
@@ -23,21 +22,23 @@ PlasmaRifle::~PlasmaRifle()
 {
 }
 
-// PlasmaRifle::PlasmaRifle(PlasmaRifle const & plasmarifle)
-// {
-// 	as;
-// }
+PlasmaRifle::PlasmaRifle(PlasmaRifle const & plasmarifle):
+	AWeapon(plasmarifle)
+{
+}
 
-// PlasmaRifle&	PlasmaRifle::operator=(const PlasmaRifle & plasmarifle)
-// {
-// 	if (&plasmarifle == this)
-// 		return *this;
-// 	m_name = plasmarifle.m_name;
-// 	m_apcost = plasmarifle.m_apcost;
-// 	m_damage = plasmarifle.m_damage;
-// }
+PlasmaRifle&	PlasmaRifle::operator=(const PlasmaRifle & plasmarifle)
+{
+	if (&plasmarifle != this)
+	{
+		m_name = plasmarifle.m_name;
+		m_apcost = plasmarifle.m_apcost;
+		m_damage = plasmarifle.m_damage;
+	}
+	return *this;
+}
 
-void	PlasmaRifle::attack()
+void	PlasmaRifle::attack() const
 {
 	std::cout << "* piouuu piouuu piouuu *\n";
 }

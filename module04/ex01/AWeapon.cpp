@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/12 16:01:05 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/13 10:41:34 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/15 09:28:33 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,21 @@ AWeapon::~AWeapon()
 {
 }
 
-AWeapon::AWeapon(AWeapon const & aweapon)
+AWeapon::AWeapon(AWeapon const & aweapon):
+	m_name(aweapon.m_name),
+	m_apcost(aweapon.m_apcost),
+	m_damage(aweapon.m_damage)
 {
-	*this = aweapon;
 }
 
 AWeapon&	AWeapon::operator=(const AWeapon &aweapon)
 {
-	if (&aweapon == this)
-		return *this;
-	m_name = aweapon.m_name;
-	m_apcost = aweapon.m_apcost;
-	m_damage = aweapon.m_damage;
+	if (&aweapon != this)
+	{
+		m_name = aweapon.m_name;
+		m_apcost = aweapon.m_apcost;
+		m_damage = aweapon.m_damage;
+	}
 	return *this;
 }
 
@@ -56,4 +59,3 @@ int AWeapon::getDamage() const
 {
 	return m_damage;
 }
-

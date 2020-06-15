@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/12 16:24:45 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/13 16:26:25 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/15 11:26:49 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	PowerFist(PowerFist const & powerfist);
 	virtual ~PowerFist();
 	PowerFist&	operator=(const PowerFist & powerfist);
-	virtual void	attack();
+	virtual void	attack() const;
 };
 
 #endif

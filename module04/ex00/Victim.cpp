@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/17 08:27:29 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/13 12:13:06 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/15 11:39:55 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ Victim::Victim(const std::string &name):
 	std::cout << "Some random victim called " << m_name << " just appeared!\n";
 }
 
-Victim::Victim(const Victim &victim)
+Victim::Victim(const Victim &victim):
+	m_name(victim.m_name)
 {
-	*this = victim;
 	std::cout << "Some random victim called " << m_name << " just appeared!\n";
 }
 
@@ -34,9 +34,10 @@ Victim::~Victim()
 
 Victim&	Victim::operator=(const Victim &victim)
 {
-	if (&victim == this)
-		return *this;
-	m_name = victim.m_name;
+	if (&victim != this)
+	{
+		m_name = victim.m_name;
+	}
 	return *this;
 }
 

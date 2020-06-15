@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/17 08:08:35 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/12 12:58:47 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/15 11:38:34 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ Sorcerer::Sorcerer(const std::string &name, const std::string &title):
 	std::cout << m_name << ", " << m_title << ", is born!\n";
 }
 
-Sorcerer::Sorcerer(const Sorcerer &sorc)
+Sorcerer::Sorcerer(const Sorcerer &sorc):
+	m_name(sorc.m_name),
+	m_title(sorc.m_title)
 {
-	*this = sorc;
 	std::cout << m_name << ", " << m_title << ", is born!\n";
 }
 
@@ -34,10 +35,11 @@ Sorcerer::~Sorcerer()
 
 Sorcerer&	Sorcerer::operator=(const Sorcerer &sorc)
 {
-	if (&sorc == this)
-		return *this;
-	m_name = sorc.m_name;
-	m_title = sorc.m_title;
+	if (&sorc != this)
+	{
+		m_name = sorc.m_name;
+		m_title = sorc.m_title;
+	}
 	return *this;
 }
 

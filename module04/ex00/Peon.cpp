@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/11 19:09:12 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/12 14:10:53 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/15 11:41:26 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ Peon::Peon(const std::string &name):
 Peon::Peon(const Peon &peon):
     Victim(peon)
 {
-    *this = peon;
     std::cout << "Zog zog.\n";
 }
 
@@ -34,9 +33,10 @@ Peon::~Peon()
 
 Peon&   Peon::operator=(const Peon &peon)
 {
-    if (&peon == this)
-        return *this;
-    Victim::operator=(peon);
+    if (&peon != this)
+    {
+		m_name = peon.m_name;
+	}
     return *this;
 }
 
