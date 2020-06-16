@@ -1,50 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   AMateria.cpp                                       :+:    :+:            */
+/*   Character.cpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/16 16:29:26 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/16 16:35:40 by bpeeters      ########   odam.nl         */
+/*   Created: 2020/06/16 17:22:05 by bpeeters      #+#    #+#                 */
+/*   Updated: 2020/06/16 17:25:02 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "Character.hpp"
 
-AMateria::AMateria()
+Character::Character(std::string const & name)
 {
 }
 
-AMateria::AMateria(std::string const & type):
-	m_type(type),
-	m_xp(0)
+Character::~Character()
 {
 }
 
-AMateria::~AMateria()
+Character::Character(Character const & character)
 {
 }
 
-AMateria::AMateria(AMateria const & amateria)
+Character&	Character::operator=(Character const & character)
+{
+	return *this;
+}
+
+std::string const &	Character::getName() const
+{
+	return m_name;
+}
+
+void	Character::equip(AMateria* m)
 {
 }
 
-AMateria&	AMateria::operator=(AMateria const & amateria)
+void	Character::unequip(int idx)
 {
 }
 
-std::string const &	AMateria::getType() const
+void	Character::use(int idx, ICharacter & target)
 {
-	return m_type;
-}
-
-unsigned int		AMateria::getXP() const
-{
-	return m_xp;
-}
-
-void				AMateria::use(ICharacter & target)
-{
-	m_xp += 10;
 }

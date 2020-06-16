@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/15 19:03:32 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/15 19:13:13 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/16 16:26:17 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 #include "ISquad.hpp"
 #include "Squad.hpp"
 #include "TacticalMarine.hpp"
-
-
-#include <iostream>
 
 int main()
 {

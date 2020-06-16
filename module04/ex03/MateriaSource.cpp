@@ -1,50 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   AMateria.cpp                                       :+:    :+:            */
+/*   MateriaSource.cpp                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/06/16 16:29:26 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/16 16:35:40 by bpeeters      ########   odam.nl         */
+/*   Created: 2020/06/16 17:51:30 by bpeeters      #+#    #+#                 */
+/*   Updated: 2020/06/16 17:53:24 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "MateriaSource.hpp"
 
-AMateria::AMateria()
+MateriaSource::MateriaSource()
 {
 }
 
-AMateria::AMateria(std::string const & type):
-	m_type(type),
-	m_xp(0)
+MateriaSource::~MateriaSource()
 {
 }
 
-AMateria::~AMateria()
+MateriaSource::MateriaSource(MateriaSource const & mat_src)
 {
 }
 
-AMateria::AMateria(AMateria const & amateria)
+MateriaSource&	MateriaSource::operator=(MateriaSource const & mat_src)
+{
+	return *this;
+}
+
+void	MateriaSource::learnMateria(AMateria*)
 {
 }
 
-AMateria&	AMateria::operator=(AMateria const & amateria)
+AMateria*	MateriaSource::createMateria(std::string const & type)
 {
-}
-
-std::string const &	AMateria::getType() const
-{
-	return m_type;
-}
-
-unsigned int		AMateria::getXP() const
-{
-	return m_xp;
-}
-
-void				AMateria::use(ICharacter & target)
-{
-	m_xp += 10;
 }
