@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/15 14:47:04 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/15 17:54:47 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/16 16:21:45 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,24 @@ TacticalMarine::~TacticalMarine()
 
 TacticalMarine::TacticalMarine(TacticalMarine const & tact)
 {
+	(void)tact; //lol
 	std::cout << "Tactical Marine ready for battle!\n";
 }
 
 TacticalMarine&	TacticalMarine::operator=(TacticalMarine const & tact)
 {
-	if (&tact != this)
-	{
-
-	}
+	(void)tact; //lol
 	return *this;
 }
 
 ISpaceMarine*	TacticalMarine::clone() const
 {
-	TacticalMarine	*ret = new TacticalMarine(*this);
+	TacticalMarine	*ret = new (std::nothrow) TacticalMarine(*this);
+	if (!ret)
+	{
+		std::cerr << "Failed to clone TacticalMarine\n";
+		return NULL;
+	}
 	return ret;
 }
 

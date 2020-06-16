@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/15 17:52:22 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/15 17:58:10 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/16 16:21:18 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,24 @@ AssaultTerminator::~AssaultTerminator()
 
 AssaultTerminator::AssaultTerminator(AssaultTerminator const & term)
 {
+	(void)term; //lol
 	std::cout << "* teleports from space *\n";
 }
 
 AssaultTerminator&	AssaultTerminator::operator=(AssaultTerminator const & term)
 {
-	if (&term != this)
-	{
-
-	}
+	(void)term; //lol
 	return *this;
 }
 
 ISpaceMarine*	AssaultTerminator::clone() const
 {
-	AssaultTerminator	*ret = new AssaultTerminator(*this);
+	AssaultTerminator	*ret = new (std::nothrow) AssaultTerminator(*this);
+	if (!ret)
+	{
+		std::cerr << "Failed to clone AssaultTerminator\n";
+		return NULL;
+	}
 	return ret;
 }
 
