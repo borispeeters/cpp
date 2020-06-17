@@ -6,14 +6,14 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/16 16:33:46 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/16 17:16:05 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/17 18:43:57 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 
-# include "AMateria.hpp"
+class AMateria;
 
 class ICharacter
 {

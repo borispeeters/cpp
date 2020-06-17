@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/16 16:29:26 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/17 08:43:13 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/17 17:13:05 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ unsigned int		AMateria::getXP() const
 
 void				AMateria::use(ICharacter & target)
 {
+	(void)target;
 	m_xp += 10;
 }
