@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/16 16:40:54 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/16 17:00:10 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/17 09:30:30 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,15 @@ Ice::~Ice()
 }
 
 Ice::Ice(Ice const & ice):
-	AMateria(ice)
+	AMateria("ice")
 {
+	m_xp = ice.getXP();
 }
 
 Ice&	Ice::operator=(Ice const & ice)
 {
+	if (&ice != this)
+		m_xp = ice.getXP();
 	return *this;
 }
 
@@ -45,6 +48,6 @@ AMateria*	Ice::clone() const
 
 void		Ice::use(ICharacter & target)
 {
-	std::cout << "* shoots an ice bolt at NAME *\n";
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *\n";
 	AMateria::use(target);
 }

@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/31 22:16:01 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/10 12:47:18 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/17 09:59:52 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ std::string	ZombieHorde::randomName()
 	static bool	seeded = false;
 	if (!seeded)
 	{
-		std::cout << "HELLO FROM THE SEED IF\n";
 		std::srand(static_cast<unsigned int>(std::time(0)));
 		std::rand();
 		seeded = true;

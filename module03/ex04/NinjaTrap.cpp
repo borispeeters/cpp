@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/03 07:33:53 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/04/11 01:25:40 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/17 10:52:02 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,6 @@ void	NinjaTrap::ninjaShoebox(const NinjaTrap &nt)
 
 void	NinjaTrap::ninjaShoebox(const ScavTrap &st)
 {
+	(void)st;
 	std::cout << "NINJ4-TP " << m_name << " tries working with the SC4V-TP but realizes it's completely useless!" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/16 16:45:55 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/16 16:57:38 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/17 09:29:42 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,15 @@ Cure::~Cure()
 }
 
 Cure::Cure(Cure const & cure):
-	AMateria(cure)
+	AMateria("cure")
 {
+	m_xp = cure.getXP();
 }
 
 Cure&	Cure::operator=(Cure const & cure)
 {
+	if (&cure != this)
+		m_xp = cure.getXP();
 	return *this;
 }
 
@@ -45,6 +48,6 @@ AMateria*	Cure::clone() const
 
 void		Cure::use(ICharacter & target)
 {
-	std::cout << "* heals NAME's wounds *\n";
+	std::cout << "* heals " << target.getName() << "'s wounds *\n";
 	AMateria::use(target);
 }

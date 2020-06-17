@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/16 16:29:26 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/16 16:35:40 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/17 08:43:13 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,20 @@ AMateria::~AMateria()
 {
 }
 
-AMateria::AMateria(AMateria const & amateria)
+AMateria::AMateria(AMateria const & amateria):
+	m_type(amateria.getType()),
+	m_xp(amateria.getXP())
 {
 }
 
 AMateria&	AMateria::operator=(AMateria const & amateria)
 {
+	if (&amateria != this)
+	{
+		m_type = amateria.getType();
+		m_xp = amateria.getXP();
+	}
+	return *this;
 }
 
 std::string const &	AMateria::getType() const

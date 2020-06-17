@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/04/02 22:58:36 by bpeeters       #+#    #+#                */
-/*   Updated: 2020/04/03 05:02:12 by bpeeters      ########   odam.nl         */
+/*   Created: 2020/04/02 22:58:36 by bpeeters      #+#    #+#                 */
+/*   Updated: 2020/06/17 10:46:31 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ private:
 	const std::string	m_name;
 	int	m_meleeDamage;
 	int	m_rangedDamage;
-	int	m_armorReduction;
+	unsigned int	m_armorReduction;
 };
 
 #endif

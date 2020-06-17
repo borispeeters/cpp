@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/15 19:15:14 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/16 17:15:18 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/17 08:36:32 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ protected:
 	unsigned int	m_xp;
 private:
 	AMateria();
-
 public:
 	AMateria(std::string const & type);
 	virtual ~AMateria();
