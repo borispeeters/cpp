@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/17 08:05:53 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/11 19:16:13 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/18 17:19:22 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ private:
 	std::string	m_title;
 };
 
-std::ostream& operator<<(std::ostream &out, const Sorcerer &sorc);
+std::ostream&	operator<<(std::ostream &out, const Sorcerer &sorc);
 
 #endif

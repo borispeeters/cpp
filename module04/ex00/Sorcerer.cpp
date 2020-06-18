@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/04/17 08:08:35 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/15 11:38:34 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/18 17:53:11 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void		Sorcerer::polymorph(Victim const & victim)
 	victim.getPolymorphed();
 }
 
-std::ostream& operator<<(std::ostream &out, const Sorcerer &sorc)
+std::ostream&	operator<<(std::ostream & out, const Sorcerer & sorc)
 {
     out << "I am " << sorc.getName() << ", " << sorc.getTitle() << ", and I like ponies!\n";
     return out;
