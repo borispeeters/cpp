@@ -6,12 +6,13 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 16:29:59 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/18 19:20:52 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/18 19:22:13 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::GradeTooHighException::GradeTooHighException():
 	runtime_error("grade is too high")
@@ -66,6 +67,19 @@ Bureaucrat&	Bureaucrat::operator=(Bureaucrat const & bureaucrat)
 		m_grade = bureaucrat.getGrade();
 	}
 	return *this;
+}
+
+void				Bureaucrat::signForm(Form & form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << getName() << " signs " << form.getName() << '\n';
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << getName() << " cannot sign " << form.getName() << " because " << e.what() << '\n';
+	}
 }
 
 std::string const &	Bureaucrat::getName() const

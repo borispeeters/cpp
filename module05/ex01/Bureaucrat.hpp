@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 07:57:05 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/18 19:21:02 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/18 19:21:25 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ public:
 		GradeTooLowException();
 		virtual ~GradeTooLowException() throw();
 	};
+	void				signForm(Form & form);
 	std::string const & getName() const;
 	int					getGrade() const;
 	void				incrementGrade();
