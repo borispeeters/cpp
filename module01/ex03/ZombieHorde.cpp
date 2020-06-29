@@ -6,14 +6,12 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/31 22:16:01 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/17 09:59:52 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/06/29 15:22:44 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include "ZombieHorde.hpp"
-
-#include <iostream>
 
 ZombieHorde::ZombieHorde(int N)
 {
