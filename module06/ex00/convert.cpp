@@ -6,11 +6,12 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/21 14:28:50 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/30 16:40:19 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/07/05 11:29:26 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <exception>
+#include <iomanip>
 #include <iostream>
 #include <sstream>
 #include "convert.hpp"
@@ -33,7 +34,7 @@ DATATYPE	detectType(std::string const & num)
 	std::string::const_iterator it = num.begin();
 	bool	isFloat = false;
 
-	if (!isdigit(*it))
+	if (num.length() == 1 && !isdigit(*it))
 		return CHAR;
 	while (it != num.end())
 	{
@@ -79,24 +80,28 @@ int		main(int argc, char **argv)
 	switch (type)
 	{
 	case CHAR:
+		std::cout << "The type is char!\n";
 		myChar = argv[1][0];
 		myInt = static_cast<int>(myChar);
 		myFloat = static_cast<float>(myChar);
 		myDouble = static_cast<double>(myChar);
 		break;
 	case INT:
+		std::cout << "The type is int!\n";
 		myInt = std::atoi(argv[1]);
 		myChar = static_cast<char>(myInt);
 		myFloat = static_cast<float>(myInt);
 		myDouble = static_cast<double>(myInt);
 		break;
 	case FLOAT:
+		std::cout << "The type is float!\n";
 		myFloat = std::atof(argv[1]);
 		myChar = static_cast<char>(myFloat);
 		myInt = static_cast<int>(myFloat);
 		myDouble = static_cast<double>(myFloat);
 		break;
 	case DOUBLE:
+		std::cout << "The type is double!\n";
 		myDouble = std::atof(argv[1]);
 		myChar = static_cast<char>(myDouble);
 		myInt = static_cast<int>(myDouble);
@@ -106,10 +111,13 @@ int		main(int argc, char **argv)
 		break;
 	}
 
-	std::cout << "Char: " << myChar << '\n';
+	std::cout << std::showpoint << std::setprecision(3);
+	std::cout << "Char: " << '\'' << myChar << '\'' << '\n';
 	std::cout << "Int: " << myInt << '\n';
-	std::cout << "Float: " << myFloat << '\n';
+	std::cout << "Float: " << myFloat << 'f' << '\n';
 	std::cout << "Double: " << myDouble << '\n';
+
+	std::cout << "nan: " << 0.0/0.0 << '\n';
 	
 	return 0;
 }
