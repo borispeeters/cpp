@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/05 23:06:46 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/07/05 23:07:29 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/07/07 13:45:03 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 class Base
 {
 public:
-	virtual ~Base() {}
+	virtual ~Base()
+	{
+	}
 };
 
 #endif
