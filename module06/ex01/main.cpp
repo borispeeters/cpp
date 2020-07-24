@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/05 15:33:30 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/07/05 23:01:40 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/07/07 13:42:27 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,20 @@ int	main()
 	void	*raw;
 	Data	*data;
 
-	raw = serialize();
-	data = deserialize(raw);
+	for (int i = 0; i < 5; ++i)
+	{
+		raw = serialize();
+		data = deserialize(raw);
 
-	std::cout << data->randomString1 << '\n';
-	std::cout << data->randomInt << '\n';
-	std::cout << data->randomString2 << '\n';
+		std::cout << "ROUND " << i + 1 << '\n';
+		std::cout << "-------" << '\n';
+		std::cout << data->randomString1 << '\n';
+		std::cout << data->randomInt << '\n';
+		std::cout << data->randomString2 << '\n';
+		std::cout << '\n';
 
-	delete static_cast<char*>(raw);
-	delete data;
+		delete reinterpret_cast<Data*>(raw);
+		delete data;
+	}
 	return 0;
 }
