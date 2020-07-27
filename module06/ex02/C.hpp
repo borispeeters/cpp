@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/05 23:11:05 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/07/07 13:45:08 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/07/27 19:56:25 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@
 
 class C : public Base
 {
-public:
-	virtual ~C()
-	{
-	}
 };
 
 #endif

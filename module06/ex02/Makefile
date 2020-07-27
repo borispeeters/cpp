@@ -1,5 +1,5 @@
 NAME = identify
-SRC = main.cpp identify.cpp
+SRC = main.cpp identify.cpp Base.cpp
 OBJ = $(SRC:.cpp=.o)
 FLAGS = -Wall -Wextra -Werror -pedantic -std=c++03
 INCLUDES = -I includes/

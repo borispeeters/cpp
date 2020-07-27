@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/05 23:12:50 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/07/07 14:13:34 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/07/27 20:39:59 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	identify_from_reference(Base & p)
 
 	try
 	{
-		A	a = dynamic_cast<A&>(p);
+		A	aClass = dynamic_cast<A&>(p);
 	}
 	catch(const std::exception& e)
 	{
@@ -67,7 +67,7 @@ void	identify_from_reference(Base & p)
 	}
 	try
 	{
-		B	b = dynamic_cast<B&>(p);
+		B	bClass = dynamic_cast<B&>(p);
 	}
 	catch(const std::exception& e)
 	{
@@ -75,7 +75,7 @@ void	identify_from_reference(Base & p)
 	}
 	try
 	{
-		C	c = dynamic_cast<C&>(p);
+		C	cClass = dynamic_cast<C&>(p);
 	}
 	catch(const std::exception& e)
 	{
