@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 16:38:34 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/29 17:44:40 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/07/27 11:19:39 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,13 @@ int	main()
 
 	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 
-	rrf->beSigned(ceo);
+	ceo.executeForm(*rrf);
+	ceo.signForm(*rrf);
+	ceo.executeForm(*rrf);
 
-	rrf->execute(ceo);
+	delete rrf;
+
+	rrf = someRandomIntern.makeForm("nonexistingform", "fuck ft_services");
 
 	return 0;
 }

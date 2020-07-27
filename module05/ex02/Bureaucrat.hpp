@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 07:57:05 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/18 19:21:25 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/07/27 09:00:09 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ public:
 	int					getGrade() const;
 	void				incrementGrade();
 	void				decrementGrade();
+	void				executeForm(Form const & form) const;
 };
 
 std::ostream&	operator<<(std::ostream & out, Bureaucrat const & bureaucrat);

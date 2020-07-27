@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/04/01 04:32:04 by bpeeters       #+#    #+#                */
-/*   Updated: 2020/04/03 04:37:54 by bpeeters      ########   odam.nl         */
+/*   Created: 2020/04/01 04:32:04 by bpeeters      #+#    #+#                 */
+/*   Updated: 2020/07/27 08:46:51 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,12 @@ void	Human::intimidatingShout(std::string const & target)
 void	Human::action(std::string const & action_name, std::string const & target)
 {
 	typedef void(Human::*humanFnPtr)(std::string const & target);
-	humanFnPtr attackFunctions[] = {&Human::meleeAttack, &Human::rangedAttack, &Human::intimidatingShout};
-	if (action_name == "meleeAttack")
-		(this->*attackFunctions[0])(target);
-	else if (action_name == "rangedAttack")
-		(this->*attackFunctions[1])(target);
-	else if (action_name == "intimidatingShout")
-		(this->*attackFunctions[2])(target);
+	humanFnPtr 	attackFunctions[] = {&Human::meleeAttack, &Human::rangedAttack, &Human::intimidatingShout};
+	std::string	attackNames[] = {"meleeAttack", "rangedAttack", "intimidatingShout"};
+
+	for (int i = 0; i < 3; ++i)
+	{
+		if (attackNames[i] == action_name)
+			(this->*attackFunctions[i])(target);
+	}
 }

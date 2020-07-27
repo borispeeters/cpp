@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 16:29:59 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/18 19:22:13 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/07/27 11:11:05 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,20 @@ void				Bureaucrat::decrementGrade()
 	++m_grade;
 	if (m_grade > 150)
 		throw Bureaucrat::GradeTooLowException();
+}
+
+void				Bureaucrat::executeForm(Form const & form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->getName() << " executes " << form.getName() << ".\n";
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->getName() << " cannot execute form " << form.getName() << " because " << e.what() << '\n';
+	}
+	
 }
 
 std::ostream&	operator<<(std::ostream & out, const Bureaucrat & bureaucrat)

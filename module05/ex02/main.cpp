@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/18 16:38:34 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/29 16:01:38 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/07/27 11:00:20 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,16 @@ int	main()
 	pres.execute(ceo);
 
 	robot.execute(ceo);
+
+	RobotomyRequestForm		rubut("megatron");
+
+	ceo.executeForm(rubut);
+	ceo.signForm(rubut);
+	ceo.executeForm(rubut);
+
+	Bureaucrat	loser("ft_services", 42);
+
+	loser.executeForm(pres);
 
 	return 0;
 }

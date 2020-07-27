@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/29 16:13:12 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/29 17:51:01 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/07/27 11:17:37 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,9 @@ Form*	Intern::makeForm(std::string const & form, std::string const & target)
 			ret = m_forms[i]->clone();
 	}
 
-	if (!ret)
+	if (ret)
+		std::cout << "Intern creates " << ret->getName() << '\n';
+	else	
 		std::cerr << "Requested form " << form << " is not known\n";
 
 	for (int i = 0; i < 3; ++i)
