@@ -6,15 +6,13 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/15 14:08:16 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/06/16 16:17:04 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/07/11 11:02:43 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include <stddef.h>
 #include "Squad.hpp"
-
-
-#include <iostream>
 
 Squad::Squad():
 	m_count(0),
