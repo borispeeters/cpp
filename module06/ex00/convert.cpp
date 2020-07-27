@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/21 14:28:50 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/07/05 11:29:26 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/07/27 19:43:17 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,18 @@ void	checkArguments(int argc, char *argv)
 	}
 }
 
-
-DATATYPE	detectType(std::string const & num)
+DATATYPE	detectType(std::string const & num, int & isneg)
 {
 	std::string::const_iterator it = num.begin();
 	bool	isFloat = false;
 
 	if (num.length() == 1 && !isdigit(*it))
 		return CHAR;
+	if (*it == '-')
+	{
+		isneg = -1;
+		++it;
+	}
 	while (it != num.end())
 	{
 		if (*it == '.')
@@ -59,6 +63,31 @@ DATATYPE	detectType(std::string const & num)
 	return INT;
 }
 
+void	print_pos_inf()
+{
+	std::cout << "char: impossible\n";	
+	std::cout << "int: impossible\n";
+	std::cout << "float: inff\n";
+	std::cout << "double: inf\n";
+}
+
+void	print_neg_inf()
+{
+	std::cout << "char: impossible\n";	
+	std::cout << "int: impossible\n";
+	std::cout << "float: -inff\n";
+	std::cout << "double: -inf\n";
+}
+
+void	print_nan()
+{
+
+	std::cout << "char: impossible\n";	
+	std::cout << "int: impossible\n";
+	std::cout << "float: nanf\n";
+	std::cout << "double: nan\n";
+}
+
 int		main(int argc, char **argv)
 {
 	try
@@ -70,12 +99,33 @@ int		main(int argc, char **argv)
 		return 1;
 	}
 
-	DATATYPE type = detectType(argv[1]);
-	std::stringstream convert(argv[1]);
+	if (std::strcmp(argv[1], "nan") == 0 || std::strcmp(argv[1], "nanf") == 0)
+	{
+		print_nan();
+		return (0);
+	}
+	if (std::strcmp(argv[1], "+inf") == 0 || std::strcmp(argv[1], "+inff") == 0
+		|| std::strcmp(argv[1], "inf") == 0 || std::strcmp(argv[1], "inff") == 0)
+	{
+		print_pos_inf();
+		return (0);
+	}
+	if (std::strcmp(argv[1], "-inf") == 0 || std::strcmp(argv[1], "-inff") == 0)
+	{
+		print_neg_inf();
+		return (0);
+	}
+
+	int		isneg = 1;
+	DATATYPE type = detectType(argv[1], isneg);
+	// std::stringstream convert(argv[1]);
 	double	myDouble(0.0);
 	float	myFloat(0.0);
 	int		myInt(0);
 	char	myChar(0);
+
+
+	std::cout << std::setprecision(1) << std::fixed;
 
 	switch (type)
 	{
@@ -111,13 +161,14 @@ int		main(int argc, char **argv)
 		break;
 	}
 
-	std::cout << std::showpoint << std::setprecision(3);
-	std::cout << "Char: " << '\'' << myChar << '\'' << '\n';
-	std::cout << "Int: " << myInt << '\n';
-	std::cout << "Float: " << myFloat << 'f' << '\n';
-	std::cout << "Double: " << myDouble << '\n';
-
-	std::cout << "nan: " << 0.0/0.0 << '\n';
+	if (isprint(myChar))
+		std::cout << "char: " << '\'' << myChar << '\'' << '\n';
+	else
+		std::cout << "char: Non displayable\n";
+	
+	std::cout << "int: " << myInt << '\n';
+	std::cout << "float: " << myFloat << 'f' << '\n';
+	std::cout << "double: " << myDouble << '\n';
 	
 	return 0;
 }
