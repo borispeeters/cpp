@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/21 14:28:50 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/07/27 19:43:17 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/07/28 16:45:20 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,6 @@ int		main(int argc, char **argv)
 
 	int		isneg = 1;
 	DATATYPE type = detectType(argv[1], isneg);
-	// std::stringstream convert(argv[1]);
 	double	myDouble(0.0);
 	float	myFloat(0.0);
 	int		myInt(0);
