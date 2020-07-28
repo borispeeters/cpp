@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/04/01 02:22:25 by bpeeters       #+#    #+#                */
-/*   Updated: 2020/04/01 03:58:34 by bpeeters      ########   odam.nl         */
+/*   Created: 2020/04/01 02:22:25 by bpeeters      #+#    #+#                 */
+/*   Updated: 2020/07/28 15:41:02 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void		replace(std::string &str, const std::string &s1, const std::string &s2)
 	while (found != std::string::npos)
 	{
 		str.replace(found, s1.length(), s2);
-		found = str.find(s1, found + 1);
+		found = str.find(s1, found + s2.length());
 	}
 }
 
