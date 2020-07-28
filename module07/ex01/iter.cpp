@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/05 23:35:57 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/07/27 19:52:28 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/07/28 21:57:04 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	print(const T & t)
 }
 
 template <typename T>
-void	iter(T *array, std::size_t length, void (*f)(const T & t))
+void	iter(T *array, std::size_t length, void (*f)(T const & t))
 {
 	for (std::size_t i = 0; i < length; ++i)
 		f(array[i]);
