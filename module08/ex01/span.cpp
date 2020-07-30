@@ -6,7 +6,7 @@
 /*   By: bpeeters <bpeeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 13:59:25 by bpeeters      #+#    #+#                 */
-/*   Updated: 2020/07/29 14:55:08 by bpeeters      ########   odam.nl         */
+/*   Updated: 2020/07/29 17:41:28 by bpeeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,6 @@ void	Span::addNumber(int n)
 	m_numbers.push_back(n);
 }
 
-#include <iostream>
-
 int		Span::shortestSpan()
 {
 	if (m_numbers.size() <= 1)
@@ -59,7 +57,15 @@ int		Span::shortestSpan()
 
 	std::sort(m_numbers.begin(), m_numbers.end());
 
-	return 0;
+	std::vector<int>	span;
+
+	std::vector<int>::iterator	it = ++m_numbers.begin();
+	while (it != m_numbers.end())
+	{
+		span.push_back(*it - *(it - 1));
+		++it;
+	}
+	return *std::min_element(span.begin(), span.end());
 }
 
 int		Span::longestSpan()
